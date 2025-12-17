@@ -25,7 +25,7 @@ const Footer = () => {
               </div>
             </a>
           </div>
-          <p className="text-[#9ca6ba] text-base font-normal leading-normal">{`© 2023 ${user.fullname}. All rights reserved.`}</p>
+          <p className="text-[#9ca6ba] text-base font-normal leading-normal">{`© 2023 ${user?.fullname}. All rights reserved.`}</p>
         </footer>
       </div>
     </footer>
