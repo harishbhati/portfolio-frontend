@@ -28,20 +28,21 @@ const navigationText = [
     }
 ]
 const Header = () => {
-  const { data: userData, loading, error } = useApi(getUserPortfolio);
-  const user = userData?.user; 
+  const { data: userData, loading } = useApi(getUserPortfolio);
+  const user = userData?.user;
+  console.log("Header User Data:", user);
 
-  if(loading) {
+  if(loading || user === undefined) {
     return <HeaderSkeleton />
   }
 
-  if(error || !user) {
-    return(
-      <header className="flex items-center justify-between px-10 py-3 border-b border-[#282e39] text-white">
-        <p>Header data not available.</p>
-      </header>
-    )
-  }
+  // if(user !== undefined){ 
+  //   return(
+  //     <header className="flex items-center justify-between px-10 py-3 border-b border-[#282e39] text-white">
+  //       <p>Header data not available.</p>
+  //     </header>
+  //   )
+  // }
     
   return (
     <header className="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#282e39] bg-[#111318] px-10 py-3 sticky top-0">

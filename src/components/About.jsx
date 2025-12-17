@@ -3,24 +3,24 @@ import { useApi } from "../hooks/useApi";
 import AboutSkeleton from "./skeleton/AboutSkeleton";
 
 const About = () => {
-  const { data: userData, loading, error } = useApi(getUserPortfolio);
+  const { data: userData, loading } = useApi(getUserPortfolio);
   const user = userData?.user;
   
-  if(loading) return <AboutSkeleton />
+  if(loading || user === undefined) return <AboutSkeleton />
 
-  if(!user || error){
-    return(
-      <section className="px-40 flex flex-1 justify-center py-5">
-        <div className="layout-content-container flex flex-col max-w-[960px] flex-1">
-          <div className="@container">
-            <div className="@[480px]:p-4">
-              Page banner data is not available.
-            </div>
-          </div>
-        </div>
-      </section>
-    )
-  }
+  // if(!user || error){
+  //   return(
+  //     <section className="px-40 flex flex-1 justify-center py-5">
+  //       <div className="layout-content-container flex flex-col max-w-[960px] flex-1">
+  //         <div className="@container">
+  //           <div className="@[480px]:p-4">
+  //             Page banner data is not available.
+  //           </div>
+  //         </div>
+  //       </div>
+  //     </section>
+  //   )
+  // }
   return (
     <section className="px-40 flex flex-1 justify-center py-5">
       <div className="layout-content-container flex flex-col max-w-[960px] flex-1">
