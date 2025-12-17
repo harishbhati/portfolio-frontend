@@ -6,7 +6,7 @@ const About = () => {
   const { data: userData, loading } = useApi(getUserPortfolio);
   const user = userData?.user;
   
-  if(loading || user === undefined) return <AboutSkeleton />
+  if(loading || !user) return <AboutSkeleton />
 
   // if(!user || error){
   //   return(

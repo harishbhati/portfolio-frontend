@@ -32,7 +32,7 @@ const Header = () => {
   const user = userData?.user;
   console.log("Header User Data:", user);
 
-  if(loading || user === undefined) {
+  if(loading || !user) {
     return <HeaderSkeleton />
   }
 
