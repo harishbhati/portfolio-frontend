@@ -50,7 +50,7 @@ const Header = () => {
           <LogoIcon  className="w-4 h-4" />
         </div>
         <h2 className="text-white text-lg font-bold leading-tight tracking-[-0.015em]">
-          {user.fullname}
+          {user?.fullname}
         </h2>
       </div>
       <div className="flex flex-1 justify-end gap-8">

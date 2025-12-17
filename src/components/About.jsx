@@ -37,10 +37,10 @@ const About = () => {
                 <h1
                   className="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]"
                 >
-                  {user.fullname}
+                  {user?.fullname}
                 </h1>
                 <h2 className="text-white text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal">
-                  {user.email}
+                  {user?.email}
                 </h2>
               </div>
               <a href={user?.portfolio || "#"}
